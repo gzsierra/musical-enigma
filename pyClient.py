@@ -1,9 +1,12 @@
+#!/usr/bin/python3
 import psutil, sendInfo
 
 while 1==1 :
-    cpu = psutil.cpu_percent(interval=5)
+    # Every second, it will fetch data
+    cpu = psutil.cpu_percent(interval=1)
     mem = psutil.virtual_memory().percent
 
-    # print("CPU : " + str(cpu) + "   Mem : " + str(mem), end='\r')
+    sendInfo.update(str(cpu), str(mem))
 
-    sendInfo.sendInfo(cpu, mem)
+    # For debug
+    # print("CPU : " + str(cpu) + "   Mem : " + str(mem), end='\r')
