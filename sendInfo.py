@@ -16,5 +16,4 @@ def update(cpu, ram):
 client = mqtt.Client()
 
 # Host port keepalive bin_addr
-client.connect("172.24.20.26", 1883, 60)
-# client.connect("192.168.1.72", 1883, 60)
+client.connect("localhost", 1883, 60)
